@@ -18,7 +18,7 @@ export default {
   // our hook here
   async preFetch ({ store, currentRoute, previousRoute, redirect, ssrContext }) {
     // Return a Promise if you are running an async job
-    return store.dispatch('example/loadData')
+    await store.dispatch('example/loadData')
   },
   computed: {
     username () {
@@ -31,12 +31,12 @@ export default {
   // ,
   // mounted () {
   //   // Preserve the previous state if it was injected from the server
-  //   this.$store.registerModule('user', userStoreModule, { preserveState: true })
+  //   this.$store.registerModule('example', exampleStoreModule, { preserveState: true })
   // },
   // // IMPORTANT: avoid duplicate module registration on the client
   // // when the route is visited multiple times.
   // destroyed () {
-  //   this.$store.unregisterModule('user')
+  //   this.$store.unregisterModule('example')
   // }
 }
 </script>
